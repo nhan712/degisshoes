@@ -15,6 +15,8 @@ html
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
 		link(href="/styles/site.min.css", rel="stylesheet")
+		link(href="/styles/font-awesome-4.5.0/css/font-awesome.min.css", rel="stylesheet")
+
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -37,31 +39,124 @@ html
 	body
 
 		//- HEADER
-		#header: .container
+		//#header: .container
+		header#header(role='banner')
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') Degisshoes
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+			nav.navbar.navbar-white.navbar-transparent.animated-dropdown.ttb-dropdown(role='navigation')
+				.navbar-top.clearfix
+					.container
+						.pull-left
+							ul.navbar-top-nav.clearfix.hidden-sm.hidden-xs
+								if user
+									if user.canAccessKeystone
+										li: a(href='/keystone') 
+											i.fa.fa-user 
+											|	My Account
+									li: a(href='/keystone/signout')
+										i.fa.fa-sign-out
+										|	Sign Out
+								else
+									li: a(href='/keystone/signin') 
+											i.fa.fa-sign-in 
+											|	Sign In
+								li: a(href='/keystone/signin') 
+									i.fa.fa-terminal
+									|	Register
+						//End .pull-left
+						.pull-right
+							.social-icons.pull-right.hidden-xs
+								a.social-icon.icon-facebook(href='#', title='Facebook')
+									i.fa.fa-facebook
+								a.social-icon.icon-skype(href='#', title='Skype')
+									i.fa.fa-skype
+							//End .social-icons
+							.dropdowns-container.pull-right.clearfix
+								.dropdown.language-dropdown.pull-right
+									a#language-dropdown.dropdown-toggle(href='#', data-toggle='dropdown', aria-expanded='false')
+										| Languages
+										span.angle
+									ul.dropdown-menu(role='menu', aria-labelledby='language-dropdown')
+										li(role='presentation')
+											a(role='menuitem', tabindex='-1', href='#') English
+										li(role='presentation')
+											a(role='menuitem', tabindex='-1', href='#') Vietnamese
+								// End .language-dropdown
+							// End .dropdowns-container
+				//End .navbar-top
+				.navbar-inner.sticky-menu
+					.container
+						.navbar-header
+							button.navbar-toggle.btn-circle.pull-right.collapsed(type='button', data-toggle='collapse', data-target='#main-navbar-container')
+								span.sr-only Toggle navigation
+								span.icon-bar
+							a.navbar-brand.text-uppercase(href='/') Degisshoes
+							button.navbar-btn.btn-icon.btn-circle.pull-right.last.visible-sm.visible-xs(type='button', data-toggle='collapse', data-target='#header-search-form')
+								i.fa.fa-search
+						// End .navbar-header
+						#main-navbar-container.navbar-collapse.collapse(aria-expanded='false', style='height: 1px;')
+							ul.nav.navbar-nav
+								li.dropdown.active.megamenu-container
+									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+										| Home
+								// End .megamenu
+								li.dropdown
+									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+										| Shop
+										span.angle
+									ul.dropdown-menu(role='menu')
+										li.dropdown.sub-dropdown
+											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												| Man
+												span.angle
+											ul.dropdown-menu(role='menu')
+												li
+													a(href='#') Type 1
+												li
+													a(href='#') Type 2
+								li.dropdown
+									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+										| Blog
+								li.dropdown
+									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+										| Contact us
+										span.angle
+									ul.dropdown-menu(role='menu')
+										li.dropdown.sub-dropdown
+											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												| Contact 1
+												span.angle
+											ul.dropdown-menu(role='menu')
+												li
+													a(href='#') Type 1
+												li
+													a(href='#') Type 2
+							//End ul.nav.navbar-nav
+							button.navbar-btn.btn-icon.btn-circle.navbar-right.last.hidden-sm.hidden-xs.collapsed(type='button', data-toggle='collapse', data-target='#header-search-form', aria-expanded='false')
+								i.fa.fa-search
+		//End #header
+			//div(role="navigation").navbar.navbar-default
+			//	.container-fluid
+			//		.navbar-header
+			//			button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+			//				span.sr-only Toggle navigation
+			//				span.icon-bar
+			//				span.icon-bar
+			//				span.icon-bar
+			//			a.navbar-brand(href='/') Degisshoes
+			//		.collapse.navbar-collapse
+			//			ul.nav.navbar-nav.navbar-left
+			//				each link in navLinks
+			//					li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+			//			ul.nav.navbar-nav.navbar-right
+			//				if user
+			//					if user.canAccessKeystone
+			//						li: a(href='/keystone') Open Keystone
+			//					li: a(href='/keystone/signout') Sign Out
+			//				else
+			//					li: a(href='/keystone/signin') Sign In
 
 		//- BODY
 		#body
@@ -85,8 +180,8 @@ html
 		.container: #footer
 
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
-
+			//p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+			p Powered by <a href="/" target="_blank">Degisshoes</a>.
 
 		//- JAVASCRIPT
 
@@ -108,3 +203,4 @@ html
 
 		//- Include template-specific javascript files by extending the js block
 		block js
+			script(src="/js/main.js")
