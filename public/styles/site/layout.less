@@ -128,9 +128,12 @@ a.social-icon:hover {
 .dropdown-toggle:hover, .dropdown-toggle:focus {
 	text-decoration: none;
 }
+.dropdown-menu {
+    z-index: 890;
+}
 .ttb-dropdown .dropdown.open > .dropdown-menu {
-    animation-name: topToBottom;
-    -webkit-animation-name: topToBottom;
+    //animation-name: topToBottom;
+    //-webkit-animation-name: topToBottom;
 }
 .animated-dropdown .dropdown > .dropdown-menu {
     animation-fill-mode: both;
@@ -145,6 +148,16 @@ a.social-icon:hover {
     border: 1px solid transparent;
     border-radius: 0;
     min-width: 100%;
+}
+@media (min-width: 768px) {
+	.navbar-nav li > .dropdown-menu {
+	    border: none;
+	    border-top: 1px solid transparent;
+	    margin: 0;
+	    border-radius: 0;
+	    min-width: 220px;
+	    padding: 7px 0;
+	}
 }
 @media (min-width: 992px) {
 	.navbar-top .dropdown-toggle {
@@ -359,6 +372,11 @@ a.social-icon:hover {
 }
 .navbar-nav .angle {
     margin: 0 0 0 4px;
+}
+.open > .dropdown-toggle > .angle:before,
+.side-menu .navbar-nav li.open > a > .angle:before,
+.side-menu .navbar-nav ul .open > a > .angle:before {
+	content:'\f106';
 }
 .navbar-nav ul .angle {
     float: right;

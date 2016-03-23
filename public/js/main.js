@@ -1,8 +1,13 @@
 ! function(a) {
     "use strict";
     var b = {
+        initialised: !1,
+        version: 1,
+        mobile: !1,
         init: function() {
-            
+            if (!this.initialised) {
+                this.initialised = !0, this.checkMobile(), this.menuHover()
+            }
         },
         checkMobile: function() {
             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? this.mobile = !0 : this.mobile = !1
@@ -482,7 +487,7 @@
             })))
         }
     };
-    a(window).on("load", function() {
+    b.init(), a(window).on("load", function() {
         b.sideMenuScrollbar()
     }), a(window).on("scroll", function() {
         b.scrollTopBtnAppear(), b.headerSearchScrollFix()
