@@ -6,7 +6,7 @@
         mobile: !1,
         init: function() {
             if (!this.initialised) {
-                this.initialised = !0, this.checkMobile(), this.menuHover()
+                this.initialised = !0, this.checkMobile(), this.menuHover(), this.mobileMenuDropdownFix()
             }
         },
         checkMobile: function() {
@@ -126,7 +126,7 @@
                 }), b.preventDefault()
             })
         },
-        
+
         scrollTopBtnAppear: function() {
             var b = a(window).scrollTop(),
                 c = a("#scroll-top");
@@ -496,5 +496,5 @@
     }) : a(window).on("resize", function() {
         b.fullHeight(), b.destroyStickyMenu()
     });
-    
+
 }(jQuery)
