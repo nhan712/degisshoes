@@ -8,8 +8,7 @@ html
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-
-		title= title || 'Degisshoes'
+		title= 'Degisshoes | ' + title.text
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
@@ -45,7 +44,7 @@ html
 		block head
 
 	//- HTML BODY
-	body
+	body(class=title.text)
 
 		//- HEADER
 		//#header: .container
@@ -146,27 +145,6 @@ html
 							button.navbar-btn.btn-icon.btn-circle.navbar-right.last.hidden-sm.hidden-xs.collapsed(type='button', data-toggle='collapse', data-target='#header-search-form', aria-expanded='false')
 								i.fa.fa-search
 		//End #header
-		//div(role="navigation").navbar.navbar-default
-		//	.container-fluid
-		//		.navbar-header
-		//			button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-		//				span.sr-only Toggle navigation
-		//				span.icon-bar
-		//				span.icon-bar
-		//				span.icon-bar
-		//			a.navbar-brand(href='/') Degisshoes
-		//		.collapse.navbar-collapse
-		//			ul.nav.navbar-nav.navbar-left
-		//				each link in navLinks
-		//					li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-		//			ul.nav.navbar-nav.navbar-right
-		//				if user
-		//					if user.canAccessKeystone
-		//						li: a(href='/keystone') Open Keystone
-		//					li: a(href='/keystone/signout') Sign Out
-		//				else
-		//					li: a(href='/keystone/signin') Sign In
-
 		//- BODY
 		#body
 
