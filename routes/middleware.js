@@ -44,10 +44,34 @@ exports.index = function(req, res, next) {
 
 };
 
+exports.blog = function(req, res, next) {
+
+	var locals = res.locals;
+	locals.title = {text: 'blog'}
+	next();
+
+};
+
 exports.contact = function(req, res, next) {
 
 	var locals = res.locals;
 	locals.title = {text: 'contact'}
+	next();
+
+};
+
+exports.gallery = function(req, res, next) {
+
+	var locals = res.locals;
+	locals.title = {text: 'gallery'}
+	next();
+
+};
+
+exports.gallery = function(req, res, next) {
+
+	var locals = res.locals;
+	locals.title = {text: 'gallery'}
 	next();
 
 };

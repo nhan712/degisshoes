@@ -1,17 +1,18 @@
 extends ../layouts/default
-
 block intro
 	.container
 		h1 Gallery
-	
+
 block content
+	link(href="styles/site/gallery.css", rel="stylesheet")
+	script(src="/js/vendor/jquery.smooth-scroll.js")
 	.container
 		if galleries.length
 			each gallery in galleries
-				h2= gallery.name
+				h2(id=gallery.name.toLowerCase())= gallery.name
 					if gallery.publishedDate
 						.pull-right.text-muted= gallery._.publishedDate.format('Do MMM YYYY')
-				
+
 				.row.gallery-images
 					if gallery.heroImage.exists
 						.col-sm-4.col-md-4.gallery-image: img(src=gallery._.heroImage.limit(680,680)).img-rounded
@@ -23,3 +24,5 @@ block content
 							.col-xs-6.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
 		else
 			h3.text-muted There are no image galleries yet.
+	script.
+		$('#collections').smoothScroll();

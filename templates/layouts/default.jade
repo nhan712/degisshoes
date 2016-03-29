@@ -53,6 +53,15 @@ html
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
+			#header-search-form.navbar-white.special-for-mobile.collapse(aria-expanded='false', style='height: 1px;')
+				.container
+					form.navbar-form.animated.fadeInDown
+						input#s.form-control(type='search', name='s', placeholder='Search in here...')
+						button.btn-circle(type='submit', title='Search')
+							i.fa.fa-search
+				// End .container
+			// End #header-search-form
+
 			nav.navbar.navbar-white.navbar-transparent.animated-dropdown.ttb-dropdown(role='navigation')
 				.navbar-top.clearfix
 					.container

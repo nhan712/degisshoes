@@ -6,7 +6,7 @@
         mobile: !1,
         init: function() {
             if (!this.initialised) {
-                this.initialised = !0, this.checkMobile(), this.menuHover(), this.mobileMenuDropdownFix()
+                this.initialised = !0, this.checkMobile(), this.menuHover(), this.mobileMenuDropdownFix(), this.headerSearchFormFix()
             }
         },
         checkMobile: function() {

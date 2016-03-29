@@ -1,0 +1,18 @@
+@media (max-width: 767px) {
+  .gallery-image {
+    padding-bottom: 5px;
+    margin-right: 55px;
+  }
+}
+@media (min-width: 768px) {
+  .gallery-image {
+    padding-bottom: 10px;
+    margin-right: 60px;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-image {
+    padding-bottom: 15px;
+    margin-right: 65px;
+  }
+}

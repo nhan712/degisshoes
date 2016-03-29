@@ -28,6 +28,7 @@
     -o-animation: imageAnimation 36s linear infinite 0s;
     -ms-animation: imageAnimation 36s linear infinite 0s;
     animation: imageAnimation 36s linear infinite 0s;
+    cursor: pointer;
 }
 .cb-slideshow li div {
     z-index: 1000;
