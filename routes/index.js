@@ -40,6 +40,10 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', middleware.blog, routes.views.post);
 	app.get('/gallery', middleware.gallery, routes.views.gallery);
 	app.all('/contact', middleware.contact, routes.views.contact);
+	app.get('/shop/login', routes.views.signin);
+	app.post('/shop/login', function(req, res) {
+		res.send('POST request');
+	});
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

@@ -76,10 +76,10 @@ html
 										i.fa.fa-sign-out
 										|	Sign Out
 								else
-									li: a(href='/keystone/signin')
+									li: a(href='/shop/login')
 											i.fa.fa-sign-in
-											|	Sign In
-								li: a(href='/keystone/signin')
+											|	Log In
+								li: a(href='/shop/register')
 									i.fa.fa-terminal
 									|	Register
 						//End .pull-left
@@ -133,23 +133,35 @@ html
 													a(href='#') Type 1
 												li
 													a(href='#') Type 2
-								li.dropdown
-									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-										| Blog
-								li.dropdown
-									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-										| Contact us
-										span.angle
-									ul.dropdown-menu(role='menu')
 										li.dropdown.sub-dropdown
 											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-												| Contact 1
+												| Woman
 												span.angle
 											ul.dropdown-menu(role='menu')
 												li
 													a(href='#') Type 1
 												li
 													a(href='#') Type 2
+								li.dropdown
+									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+										| Blog
+								li.dropdown
+									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+										| Support
+										span.angle
+									ul.dropdown-menu(role='menu')
+										li.dropdown.sub-dropdown
+											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												| About
+										li.dropdown.sub-dropdown
+											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												| Contact us
+												//span.angle
+											//ul.dropdown-menu(role='menu')
+												//li
+													//a(href='#') Type 1
+												//li
+													//a(href='#') Type 2
 							//End ul.nav.navbar-nav
 							button.navbar-btn.btn-icon.btn-circle.navbar-right.last.hidden-sm.hidden-xs.collapsed(type='button', data-toggle='collapse', data-target='#header-search-form', aria-expanded='false')
 								i.fa.fa-search
