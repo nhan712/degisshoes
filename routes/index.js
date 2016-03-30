@@ -40,6 +40,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', middleware.blog, routes.views.post);
 	app.get('/gallery', middleware.gallery, routes.views.gallery);
 	app.all('/contact', middleware.contact, routes.views.contact);
+	app.get('/shop', middleware.shop, routes.views.shop);
 	app.get('/shop/login', routes.views.signin);
 	app.post('/shop/login', function(req, res) {
 		var User = keystone.list(keystone.get('user model'));

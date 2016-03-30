@@ -6,7 +6,7 @@
         mobile: !1,
         init: function() {
             if (!this.initialised) {
-                this.initialised = !0, this.checkMobile(), this.menuHover(), this.mobileMenuDropdownFix(), this.headerSearchFormFix()
+                this.initialised = !0, this.checkMobile(), this.menuHover(), this.mobileMenuDropdownFix(), this.headerSearchFormFix(), this.collapseArrows(), this.scrollToTopAnimation()
             }
         },
         checkMobile: function() {
@@ -116,7 +116,7 @@
             }
         },
         collapseArrows: function() {
-            a(".category-widget-btn").on("click", function(b) {
+            a(".category-widget-btn, #category-widget li a").on("click", function(b) {
                 var c = a(this),
                     d = c.closest("li");
                 d.hasClass("open") ? d.find("ul").slideUp(400, function() {

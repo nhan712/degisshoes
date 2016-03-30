@@ -29,7 +29,13 @@ ul, ol {
     padding: 0;
     margin: 0;
 }
-
+a {
+    -webkit-transition: color .35s;
+    transition: color .35s;
+}
+a:active, a:hover, a:focus {
+    text-decoration: none;
+}
 // Header =====================================================================
 
 #header {
@@ -715,4 +721,76 @@ label {
 .fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
+}
+/* =============================================
+------------- Scroll Top Button  --------------
+==============================================*/
+#scroll-top {
+	position:fixed;
+	bottom:0;
+	right:25px;
+	display:block;
+	visibility:hidden;
+	cursor:pointer;
+	z-index:999;
+	width:46px;
+	height:46px;
+	line-height:43px;
+	font-size:24px;
+	border-radius:50%;
+	opacity:0;
+	background: #3a3a3a;
+	transition: all 0.35s ease-in-out;
+	-webkit-transition: all 0.35s ease-in-out;
+	text-align:center;
+	color:#fff;
+}
+
+#scroll-top.smaller {
+	width:38px;
+	height:38px;
+	line-height: 38px;
+}
+
+#scroll-top.no-radius {
+	border-radius: 0;
+}
+
+#scroll-top:hover {
+	color:#fff;
+}
+
+#scroll-top.gray {
+	background-color: #e1e1e1;
+	color:#505050;
+}
+
+#scroll-top.gray:hover {
+	background-color: #c7c7c7;
+	color:#3a3a3a;
+}
+
+#scroll-top.dark {
+	background-color: #3a3a3a;
+	color:#b7b7b7;
+}
+
+#scroll-top.dark:hover {
+	background-color: #1a1a1a;
+	color:#fafafa;
+}
+
+#scroll-top.white {
+	background-color: #fff;
+	color:#505050;
+}
+
+#scroll-top.white:hover {
+	color:#fff;
+}
+
+#scroll-top.fixed {
+	opacity:1;
+	bottom:25px;
+	visibility:visible;
 }

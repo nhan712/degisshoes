@@ -68,10 +68,10 @@ exports.gallery = function(req, res, next) {
 
 };
 
-exports.gallery = function(req, res, next) {
+exports.shop = function(req, res, next) {
 
 	var locals = res.locals;
-	locals.title = {text: 'gallery'}
+	locals.title = {text: 'shop'}
 	next();
 
 };

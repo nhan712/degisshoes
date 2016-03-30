@@ -1,0 +1,446 @@
+extends ../layouts/default
+
+block content
+  link(rel="stylesheet" type="text/css" href="styles/site/shop.css")
+  link(rel="stylesheet" type="text/css" href="styles/vendor/jquery.selectbox.css")
+  script(src="js/vendor/jquery.selectbox.min.js")
+  .container
+    .row
+      .col-md-9
+        .filter-row.clearfix
+          .filter-row-left
+            span.filter-row-label Sort By:
+            .small-selectbox.clearfix
+              select#sort.selectbox(name='sort', style='display: none;')
+                option(value='Rating') Rating
+                option(value='Color') Color
+                option(value='Size') Size
+                option(value='Price') Price
+            // End .normal-selectbox
+          // End .filter-row-left
+          .filter-row-left
+            span.filter-row-label Show:
+            .small-selectbox.clearfix
+              select#count.selectbox(name='count', style='display: none;')
+                option(value='15') 15
+                option(value='30') 30
+                option(value='45') 45
+                option(value='60') 60
+            // End .normal-selectbox
+          // End .filter-row-left
+        .row
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/1.jpg', alt='Product image')
+                    img.product-image-hover(src='images/1.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 1
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/2.jpg', alt='Product image')
+                    img.product-image-hover(src='images/2.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 2
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/3.jpg', alt='Product image')
+                    img.product-image-hover(src='images/3.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 3
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+        .row
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/1.jpg', alt='Product image')
+                    img.product-image-hover(src='images/1.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 1
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/2.jpg', alt='Product image')
+                    img.product-image-hover(src='images/2.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 2
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/3.jpg', alt='Product image')
+                    img.product-image-hover(src='images/3.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 3
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+        .row
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/1.jpg', alt='Product image')
+                    img.product-image-hover(src='images/1.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 1
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/2.jpg', alt='Product image')
+                    img.product-image-hover(src='images/2.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 2
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/3.jpg', alt='Product image')
+                    img.product-image-hover(src='images/3.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 3
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+        .row
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/1.jpg', alt='Product image')
+                    img.product-image-hover(src='images/1.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 1
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/2.jpg', alt='Product image')
+                    img.product-image-hover(src='images/2.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 2
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/3.jpg', alt='Product image')
+                    img.product-image-hover(src='images/3.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 3
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+        .row
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/1.jpg', alt='Product image')
+                    img.product-image-hover(src='images/1.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 1
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/2.jpg', alt='Product image')
+                    img.product-image-hover(src='images/2.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 2
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+          .col-sm-4
+            .product.text-center
+              .product-top
+                span.product-box.new-box.new-box-border New
+                figure
+                  a(href='#', title='Product Name')
+                    img.product-image(src='images/3.jpg', alt='Product image')
+                    img.product-image-hover(src='images/3.jpg', alt='Product image')
+                .product-action-container.each-btn-animate
+                  a.btn.btn-dark.add-to-favorite(href='#', title='Add to favorite')
+                    i.fa.fa-heart
+                  a.btn.btn-dark.add-to-wishlist(href='#', title='Add to wishlist')
+                    i.fa.fa-gift
+                  a.btn.btn-dark.quick-view(href='#', title='Quick View')
+                    i.fa.fa-search-plus
+                // end .product-action-container
+              // End .product-top
+              h3.product-title
+                a(href='product.html', title='Product Title') Product 3
+              .product-price-container
+                span.product-price $49.99
+              // End .product-price-container
+              a.btn.btn-custom.add-to-cart(href='#') Add to Cart
+          // End .col-sm-4
+      // End .col-md-9
+      aside.col-md-3.sidebar
+        .widget
+          h3 Categories
+          ul#category-widget
+            li.open
+              a(href='#')
+                | Men
+                span.category-widget-btn
+              ul
+                li
+                  a(href='#')
+                    i.fa.fa-angle-right
+                    | Type 1
+                li
+                  a(href='#')
+                    i.fa.fa-angle-right
+                    | Type 2
+            // End Men cat
+            li
+              a(href='#')
+                | Women
+                span.category-widget-btn
+              ul
+                li
+                  a(href='#')
+                    i.fa.fa-angle-right
+                    | Type 1
+                li
+                  a(href='#')
+                    i.fa.fa-angle-right
+                    | Type 2
+            // End Women cat
+      // End sidebar
+  a#scroll-top.fixed(href='#top', title='Back to Top')
+    i.fa.fa-angle-up    
+  script.
+    $("#sort, #count").selectbox({
+      onOpen: function (inst) {
+        //there is no onCreated handler, so I have to use this.
+        //but if you want you can just fire this somewhere else
+        console.log("open", inst);
+      },
+      onClose: function (inst) {
+        console.log("close", inst);
+      },
+      onChange: function (val, inst) {
+        console.log(val);
+      },
+      effect: "slide"
+    });
