@@ -115,53 +115,110 @@ html
 						// End .navbar-header
 						#main-navbar-container.navbar-collapse.collapse(aria-expanded='false', style='height: 1px;')
 							ul.nav.navbar-nav
-								li.dropdown.active.megamenu-container
-									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-										| Home
-								// End .megamenu
-								li.dropdown
-									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-										| Shop
-										span.angle
-									ul.dropdown-menu(role='menu')
-										li.dropdown.sub-dropdown
-											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-												| Man
-												span.angle
-											ul.dropdown-menu(role='menu')
-												li
-													a(href='#') Type 1
-												li
-													a(href='#') Type 2
-										li.dropdown.sub-dropdown
-											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-												| Woman
-												span.angle
-											ul.dropdown-menu(role='menu')
-												li
-													a(href='#') Type 1
-												li
-													a(href='#') Type 2
-								li.dropdown
-									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-										| Blog
-								li.dropdown
-									a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-										| Support
-										span.angle
-									ul.dropdown-menu(role='menu')
-										li.dropdown.sub-dropdown
-											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-												| About
-										li.dropdown.sub-dropdown
-											a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-												| Contact us
-												//span.angle
-											//ul.dropdown-menu(role='menu')
-												//li
-													//a(href='#') Type 1
-												//li
-													//a(href='#') Type 2
+								if (title.text == 'home')
+									li.dropdown.active.megamenu-container
+										a(href='/')
+											| Home
+								else
+									li.dropdown.megamenu-container
+										a(href='/')
+											| Home
+								// End Home menu
+								if (title.text == 'shop')
+									li.dropdown.active
+										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+											| Shop
+											span.angle
+										ul.dropdown-menu(role='menu')
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Man
+													span.angle
+												ul.dropdown-menu(role='menu')
+													li
+														a(href='#') Type 1
+													li
+														a(href='#') Type 2
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Woman
+													span.angle
+												ul.dropdown-menu(role='menu')
+													li
+														a(href='#') Type 1
+													li
+														a(href='#') Type 2
+								else
+									li.dropdown
+										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+											| Shop
+											span.angle
+										ul.dropdown-menu(role='menu')
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Man
+													span.angle
+												ul.dropdown-menu(role='menu')
+													li
+														a(href='#') Type 1
+													li
+														a(href='#') Type 2
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Woman
+													span.angle
+												ul.dropdown-menu(role='menu')
+													li
+														a(href='#') Type 1
+													li
+														a(href='#') Type 2
+								// End Shop menu
+								if (title.text == 'blog')
+									li.dropdown.active
+										a(href='/blog')
+											| Blog
+								else
+									li.dropdown
+										a(href='/blog')
+											| Blog
+								// End Blog menu
+								if (title.text == 'contact')
+									li.dropdown.active
+										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+											| Support
+											span.angle
+										ul.dropdown-menu(role='menu')
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| About
+											li.dropdown.sub-dropdown.active
+												a.dropdown-toggle(href='/contact', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Contact us
+								else if (title.text == 'about')
+									li.dropdown.active
+										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+											| Support
+											span.angle
+										ul.dropdown-menu(role='menu')
+											li.dropdown.sub-dropdown.active
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| About
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='/contact', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Contact us
+								else
+									li.dropdown
+										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+											| Support
+											span.angle
+										ul.dropdown-menu(role='menu')
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+													| About
+											li.dropdown.sub-dropdown
+												a.dropdown-toggle(href='/contact', data-toggle='dropdown', role='button', aria-expanded='false')
+													| Contact us
+								// End Support menu
 							//End ul.nav.navbar-nav
 							button.navbar-btn.btn-icon.btn-circle.navbar-right.last.hidden-sm.hidden-xs.collapsed(type='button', data-toggle='collapse', data-target='#header-search-form', aria-expanded='false')
 								i.fa.fa-search

@@ -42,7 +42,20 @@ exports = module.exports = function(app) {
 	app.all('/contact', middleware.contact, routes.views.contact);
 	app.get('/shop/login', routes.views.signin);
 	app.post('/shop/login', function(req, res) {
-		res.send('POST request');
+		var User = keystone.list(keystone.get('user model'));
+		User.model.findOne({ email: req.body.email }).exec(function(err, user) {
+			if (user) {
+				user._.password.compare(req.body.password, function(err, isMatch) {
+					if (!err && isMatch) {
+						res.send('success');
+					} else {
+						res.send('fail');
+					}
+				});
+			} else {
+				res.send('fail');
+			}
+		});
 	});
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
