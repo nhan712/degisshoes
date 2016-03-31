@@ -136,18 +136,18 @@ html
 													span.angle
 												ul.dropdown-menu(role='menu')
 													li
-														a(href='#') Type 1
+														a(href='/shop') Type 1
 													li
-														a(href='#') Type 2
+														a(href='/shop') Type 2
 											li.dropdown.sub-dropdown
 												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
 													| Women
 													span.angle
 												ul.dropdown-menu(role='menu')
 													li
-														a(href='#') Type 1
+														a(href='/shop') Type 1
 													li
-														a(href='#') Type 2
+														a(href='/shop') Type 2
 								else
 									li.dropdown
 										a.dropdown-toggle(href='/shop', data-toggle='dropdown', role='button', aria-expanded='false')
@@ -160,18 +160,18 @@ html
 													span.angle
 												ul.dropdown-menu(role='menu')
 													li
-														a(href='#') Type 1
+														a(href='/shop') Type 1
 													li
-														a(href='#') Type 2
+														a(href='/shop') Type 2
 											li.dropdown.sub-dropdown
 												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
 													| Woman
 													span.angle
 												ul.dropdown-menu(role='menu')
 													li
-														a(href='#') Type 1
+														a(href='/shop') Type 1
 													li
-														a(href='#') Type 2
+														a(href='/shop') Type 2
 								// End Shop menu
 								if (title.text == 'blog')
 									li.dropdown.active
@@ -189,10 +189,10 @@ html
 											span.angle
 										ul.dropdown-menu(role='menu')
 											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												a(href='#')
 													| About
 											li.dropdown.sub-dropdown.active
-												a.dropdown-toggle(href='/contact', data-toggle='dropdown', role='button', aria-expanded='false')
+												a(href='/contact')
 													| Contact us
 								else if (title.text == 'about')
 									li.dropdown.active
@@ -201,10 +201,10 @@ html
 											span.angle
 										ul.dropdown-menu(role='menu')
 											li.dropdown.sub-dropdown.active
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												a(href='#')
 													| About
 											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='/contact', data-toggle='dropdown', role='button', aria-expanded='false')
+												a(href='/contact')
 													| Contact us
 								else
 									li.dropdown
@@ -213,10 +213,10 @@ html
 											span.angle
 										ul.dropdown-menu(role='menu')
 											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+												a(href='#')
 													| About
 											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='/contact', data-toggle='dropdown', role='button', aria-expanded='false')
+												a(href='/contact')
 													| Contact us
 								// End Support menu
 							//End ul.nav.navbar-nav
