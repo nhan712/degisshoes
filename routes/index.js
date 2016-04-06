@@ -35,12 +35,12 @@ var routes = {
 exports = module.exports = function(app) {
 
 	// Views
-	app.get('/', middleware.index, routes.views.index);
-	app.get('/blog/:category?', middleware.blog, routes.views.blog);
-	app.get('/blog/post/:post', middleware.blog, routes.views.post);
-	app.get('/gallery', middleware.gallery, routes.views.gallery);
-	app.all('/contact', middleware.contact, routes.views.contact);
-	app.get('/shop', middleware.shop, routes.views.shop);
+	app.get('/', middleware.getProductCategories, routes.views.index);
+	app.get('/blog/:category?', middleware.getProductCategories, routes.views.blog);
+	app.get('/blog/post/:post', middleware.getProductCategories, routes.views.post);
+	app.get('/gallery', middleware.getProductCategories, routes.views.gallery);
+	app.all('/contact', middleware.getProductCategories, routes.views.contact);
+	app.get('/shop', middleware.getProductCategories, routes.views.shop);
 	app.get('/shop/login', routes.views.signin);
 	app.post('/shop/login', function(req, res) {
 		var User = keystone.list(keystone.get('user model'));

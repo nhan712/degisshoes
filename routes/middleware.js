@@ -10,7 +10,7 @@
 
 var _ = require('underscore');
 
-
+var keystone = require('keystone');
 /**
 	Initialises the standard view locals
 
@@ -25,10 +25,21 @@ exports.initLocals = function(req, res, next) {
 
 	locals.navLinks = [
 		{ label: 'Home',		key: 'home',		href: '/' },
+		{ label: 'Shop',		key: 'shop',		href: '/shop' },
 		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
+		// { label: 'Gallery',		key: 'gallery',		href: '/gallery' },
 		{ label: 'Contact',		key: 'contact',		href: '/contact' }
 	];
+
+	locals.productCategories = [];
+	keystone.list('ProductCategory').model.find().sort('name').exec(function(err, results) {
+
+		if (err || !results.length) {
+			return next(err);
+		}
+
+		locals.productCategories = results;
+	});
 
 	locals.user = req.user;
 
@@ -36,46 +47,19 @@ exports.initLocals = function(req, res, next) {
 
 };
 
-exports.index = function(req, res, next) {
-
+exports.getProductCategories = function(req, res, next) {
 	var locals = res.locals;
-	locals.title = {text: 'home'}
+	locals.productCategories = [];
+	keystone.list('ProductCategory').model.find().sort('name').exec(function(err, results) {
+
+		if (err || !results.length) {
+			return next(err);
+		}
+
+		locals.productCategories = results;
+	});
 	next();
-
-};
-
-exports.blog = function(req, res, next) {
-
-	var locals = res.locals;
-	locals.title = {text: 'blog'}
-	next();
-
-};
-
-exports.contact = function(req, res, next) {
-
-	var locals = res.locals;
-	locals.title = {text: 'contact'}
-	next();
-
-};
-
-exports.gallery = function(req, res, next) {
-
-	var locals = res.locals;
-	locals.title = {text: 'gallery'}
-	next();
-
-};
-
-exports.shop = function(req, res, next) {
-
-	var locals = res.locals;
-	locals.title = {text: 'shop'}
-	next();
-
-};
-
+}
 
 /**
 	Fetches and clears the flashMessages before a view is rendered

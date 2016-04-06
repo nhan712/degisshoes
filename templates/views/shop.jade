@@ -398,33 +398,28 @@ block content
         .widget
           h3 Categories
           ul#category-widget
+
             li.open
               a(href='#')
                 | Men
                 span.category-widget-btn
               ul
-                li
-                  a(href='#')
-                    i.fa.fa-angle-right
-                    | Type 1
-                li
-                  a(href='#')
-                    i.fa.fa-angle-right
-                    | Type 2
+                each category in data.categories
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right
+                      | #{category.name}
             // End Men cat
             li
               a(href='#')
                 | Women
                 span.category-widget-btn
               ul
-                li
-                  a(href='#')
-                    i.fa.fa-angle-right
-                    | Type 1
-                li
-                  a(href='#')
-                    i.fa.fa-angle-right
-                    | Type 2
+                each category in data.categories
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right
+                      | #{category.name}
             // End Women cat
       // End sidebar
   a#scroll-top(href='#top', title='Back to Top')

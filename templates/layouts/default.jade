@@ -8,7 +8,7 @@ html
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-		title= 'Degisshoes | ' + title.text
+		title= 'Degisshoes | ' + section
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
@@ -44,7 +44,7 @@ html
 		block head
 
 	//- HTML BODY
-	body(class=title.text)
+	body(class=section)
 
 		//- HEADER
 		//#header: .container
@@ -115,110 +115,32 @@ html
 						// End .navbar-header
 						#main-navbar-container.navbar-collapse.collapse(aria-expanded='false', style='height: 1px;')
 							ul.nav.navbar-nav
-								if (title.text == 'home')
-									li.dropdown.active.megamenu-container
-										a(href='/')
-											| Home
-								else
-									li.dropdown.megamenu-container
-										a(href='/')
-											| Home
-								// End Home menu
-								if (title.text == 'shop')
-									li.dropdown.active
-										a.dropdown-toggle(href='/shop', data-toggle='dropdown', role='button', aria-expanded='false')
-											| Shop
-											span.angle
-										ul.dropdown-menu(role='menu')
-											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-													| Men
-													span.angle
-												ul.dropdown-menu(role='menu')
-													li
-														a(href='/shop') Type 1
-													li
-														a(href='/shop') Type 2
-											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-													| Women
-													span.angle
-												ul.dropdown-menu(role='menu')
-													li
-														a(href='/shop') Type 1
-													li
-														a(href='/shop') Type 2
-								else
-									li.dropdown
-										a.dropdown-toggle(href='/shop', data-toggle='dropdown', role='button', aria-expanded='false')
-											| Shop
-											span.angle
-										ul.dropdown-menu(role='menu')
-											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-													| Man
-													span.angle
-												ul.dropdown-menu(role='menu')
-													li
-														a(href='/shop') Type 1
-													li
-														a(href='/shop') Type 2
-											li.dropdown.sub-dropdown
-												a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-													| Woman
-													span.angle
-												ul.dropdown-menu(role='menu')
-													li
-														a(href='/shop') Type 1
-													li
-														a(href='/shop') Type 2
-								// End Shop menu
-								if (title.text == 'blog')
-									li.dropdown.active
-										a(href='/blog')
-											| Blog
-								else
-									li.dropdown
-										a(href='/blog')
-											| Blog
-								// End Blog menu
-								if (title.text == 'contact')
-									li.dropdown.active
-										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-											| Support
-											span.angle
-										ul.dropdown-menu(role='menu')
-											li.dropdown.sub-dropdown
-												a(href='#')
-													| About
-											li.dropdown.sub-dropdown.active
-												a(href='/contact')
-													| Contact us
-								else if (title.text == 'about')
-									li.dropdown.active
-										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-											| Support
-											span.angle
-										ul.dropdown-menu(role='menu')
-											li.dropdown.sub-dropdown.active
-												a(href='#')
-													| About
-											li.dropdown.sub-dropdown
-												a(href='/contact')
-													| Contact us
-								else
-									li.dropdown
-										a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-											| Support
-											span.angle
-										ul.dropdown-menu(role='menu')
-											li.dropdown.sub-dropdown
-												a(href='#')
-													| About
-											li.dropdown.sub-dropdown
-												a(href='/contact')
-													| Contact us
-								// End Support menu
+								each link in navLinks
+									if (link.key !== 'shop')
+										li.dropdown(class=(section === link.key ? 'active' : null))
+											a(href=link.href)=link.label
+									else
+										li.dropdown(class=(section === link.key ? 'active' : null))
+											a.dropdown-toggle(href=link.href, data-toggle='dropdown', role='button', aria-expanded='false')=link.label
+												span.angle
+											ul.dropdown-menu(role='menu')
+												li.dropdown.sub-dropdown
+													a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+														| Men
+														span.angle
+													ul.dropdown-menu(role='menu')
+														each category in productCategories
+															li
+																a(href='/shop')=category.name
+												li.dropdown.sub-dropdown
+													a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+														| Women
+														span.angle
+													ul.dropdown-menu(role='menu')
+														each category in productCategories
+															li
+																a(href='/shop')=category.name
+									// End Home menu
 							//End ul.nav.navbar-nav
 							button.navbar-btn.btn-icon.btn-circle.navbar-right.last.hidden-sm.hidden-xs.collapsed(type='button', data-toggle='collapse', data-target='#header-search-form', aria-expanded='false')
 								i.fa.fa-search
